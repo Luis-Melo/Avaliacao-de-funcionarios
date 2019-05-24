@@ -1,11 +1,13 @@
 body{
     background: url(img/companyBlur.png) no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
 }
 .container{
     margin: 6% 0 0;
+    padding: 0;
 }
 .page-header{
     width: 80%;
@@ -18,31 +20,119 @@ body{
     font-size: 30pt;
     font-weight: bold;
 }
+.page-header h2{
+    font-weight: bold;
+}
 
 .login{
-    width: 40%;
-    margin: 15% 30%;
+    width: 50%;
+    margin: 15% auto;
 }
-.login input {
-    margin: 5% auto;
+.login .jumbotron {
+    width: 100%;
+    margin: 0;
+    padding-top: 5%; 
+    padding-bottom: 5%;
+    background: rgba(255, 255, 255, 0.8);
 }
-.login input.btn-primary{
-    /* width: 20%; */
+.login p{
+    color: #684087;
+    font-weight: bolder;
+    font-size: 15pt;
+    text-transform: uppercase;
+    /* text-shadow: 1px 1px 1px black;  */
+}
+.login input, a {
+    margin: 0 auto 5%;
+}
+.login a.btn-primary{
     margin: auto 40%;
     background:  #684087;
     border:  #684087;
 }
-.login input.btn-primary:hover {
+.login a.btn-primary:hover {
     background: #301942;
 }
 
 
+/*MENU DE FUNCIONÁRIOS*/
+
+section.funcionarios {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+section.func-all-btn{
+    width: 70%;
+    margin: 5% 14%;
+    
+}
+/* section.func-all-btn .btn-av-tt, .btn-rl-tt{ 
+    position: relative;
+} */
+section.func-all-btn .btn-primary {
+    margin: auto 11%;
+    background:  #684087;
+    border:  #684087;
+    padding: 10pt;
+}
+section.func-all-btn .btn-primary:hover {
+    background: #301942;
+
+}
+
+section.funcionarios .container {
+    margin: auto auto 5%;
+    position: relative;
+    width: 10%;
+    padding: 0;
+    
+}
+section.funcionarios .image {
+    display: block;
+    width: 70%;
+    height: auto;
+    box-shadow: 1px 1px 3px black;
+}
+section.funcionarios .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 70%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #684087;
+}
+section.funcionarios .func-ind .overlay {
+    background-color: black;
+}
+section.funcionarios .container:hover .overlay {
+    opacity: .9;
+}
+section.funcionarios .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/*RODAPÉ*/
 
 footer {
     position: relative;
     left: 0;
     bottom: 0;
-    margin-top: 20%;
+    margin-top: 5%;
     width: 100%;
     background-color: #301942;
     color: white;
@@ -69,3 +159,4 @@ footer ul li {
 footer ul li p {
 	margin: 5px;
 }
+

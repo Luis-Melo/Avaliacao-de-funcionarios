@@ -128,7 +128,7 @@ section.funcionarios .text {
 
 /*MENU DE AVALIAÇÕES*/
 section.aval-opt {
-    margin: 10% auto;
+    margin: 15% auto;
 }
 section.aval-opt .table{
     box-shadow: 1px 1px 2px #505050;

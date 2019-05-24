@@ -126,6 +126,47 @@ section.funcionarios .text {
     text-align: center;
 }
 
+/*MENU DE AVALIAÇÕES*/
+section.aval-opt {
+    margin: 10% auto;
+}
+section.aval-opt .table{
+    box-shadow: 1px 1px 2px #505050;
+    height: 100%;
+}
+section.aval-opt .table tbody {
+    background: white;
+}
+section.aval-opt .table thead.thead-dark tr th{
+    background: #301942;
+}
+section.aval-opt .table td{
+    vertical-align: middle;
+}
+section.aval-opt .table tbody a{
+    text-decoration: none;
+    color: #505050;
+}
+section.aval-opt .table tbody a:hover{
+    color:black;
+}
+
+section.aval-opt h4{
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    font-weight: bolder;
+    margin: 2% 0;
+
+}
+section.aval-total{
+    margin: 5% auto;
+    padding-bottom: 2%;
+    /* border: solid;
+    border-color: black; */
+    background: rgba(255, 255, 255, .1);
+    border-radius: 3pt;
+}
+
 /*RODAPÉ*/
 
 footer {

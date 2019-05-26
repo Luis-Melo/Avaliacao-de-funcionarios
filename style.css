@@ -140,12 +140,23 @@ body{
 .cartao-funcionario .jumbotron ul li {
     list-style: none;
 }
-.cartao-funcionario table {
+.cartao-funcionario .table {
     font-size: 12pt;
     text-align: center;
     height: auto;
     margin: 20pt auto;
+}
+.cartao-funcionario .table td {
     vertical-align: middle;
+    font-size: 14pt;
+}
+.cartao-funcionario .table td a{
+    color: #505050;
+    transition: .2s ease-in-out;
+    text-decoration: none;
+}
+.cartao-funcionario .table td a:hover{
+    color: black;
 }
 .cartao-funcionario table#table-geral{
     height: 82%;

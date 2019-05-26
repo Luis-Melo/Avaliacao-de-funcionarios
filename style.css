@@ -121,7 +121,7 @@ body{
     color: white;
     font-size: 14pt;
 }
-.cartao-funcionario img{
+.cartao-funcionario .image{
     margin: 20pt auto;
 }
 .cartao-funcionario .jumbotron{

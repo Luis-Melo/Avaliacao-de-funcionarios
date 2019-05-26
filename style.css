@@ -54,67 +54,54 @@ body{
 /*MENU DE FUNCIONÁRIOS*/
 
 section.func-all-btn{
-    width: 70%;
-    margin: 5% 14%;
+    /* width: 80%; */
+    margin: 50pt auto auto;
+    padding: 0;
     
 }
-/* section.func-all-btn .btn-av-tt, .btn-rl-tt{ 
-    position: relative;
-} */
 section.func-all-btn .btn-primary {
-    margin: auto 11%;
     background:  #684087;
     border:  #684087;
-    padding: 10pt;
 }
 section.func-all-btn .btn-primary:hover {
     background: #301942;
-
 }
 
-section.funcionarios {
+.linha-func {
     position: relative;
     margin: 0;
     padding: 0;
     width: 100%;
 }
-section.funcionarios .container {
+.linha-func .image {
     display: inline-block;
-    margin: auto auto 5%;
-    position: relative;
-    /* width: 10%;
-    padding: 0; */
-    
-}
-section.funcionarios .image {
-    /* width: 70%; */
-    /* height: auto; */
     box-shadow: 1px 1px 3px black;
+    margin: 10pt auto;
 }
-section.funcionarios .overlay {
-    /* position: absolute; */
+.linha-func a {
+    width: 90%;
+    height: 91%;
+    margin:0;
+    /* padding:10pt; */
+    background-color: #684087;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    /* height: 100%; */
-    /* width: 70%; */
     opacity: 0;
     transition: .5s ease;
     background-color: #684087;
 }
-section.funcionarios .func-ind .overlay {
-    background-color: black;
-}
-section.funcionarios .container:hover .overlay {
+.linha-func a:hover  {
     opacity: .9;
 }
-section.funcionarios .text {
-    color: white;
+.linha-func .text {
+    border-radius: 5px;
+    color: white; 
     font-size: 20px;
     position: absolute;
-    /* top: 50%; */
-    /* left: 50%; */
+    top: 50%;
+    left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -176,7 +163,7 @@ footer {
     text-align: center;
     font-size: 10pt;
     padding: 5pt;
- }
+}
 footer p{
     display: inline-block;
     text-transform: uppercase;

@@ -54,16 +54,23 @@ body{
 /*MENU DE FUNCIONÁRIOS*/
 
 .func-all-btn{
-    margin: 50pt auto 20pt;
+    margin: 50pt 0 20pt;
     padding: 0;
     
 }
-.func-all-btn .btn-primary {
+.func-all-btn .fa-btn{
+    padding: 0;
+    display: inline-block;
+    margin: auto;
+}
+.func-all-btn .fa-btn .btn-primary {
     background:  #684087;
     border:  #684087;
+    width: 100%;
     margin: 10pt auto;
+    padding: 10pt;
 }
-.func-all-btn .btn-primary:hover {
+.func-all-btn .fa-btn .btn-primary:hover {
     background: #301942;
 }
 

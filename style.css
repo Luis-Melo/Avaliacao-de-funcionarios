@@ -53,51 +53,55 @@ body{
 
 /*MENU DE FUNCIONÁRIOS*/
 
-section.func-all-btn{
-    /* width: 80%; */
-    margin: 50pt auto auto;
+.func-all-btn{
+    margin: 50pt auto 20pt;
     padding: 0;
     
 }
-section.func-all-btn .btn-primary {
+.func-all-btn .btn-primary {
     background:  #684087;
     border:  #684087;
+    margin: 10pt auto;
 }
-section.func-all-btn .btn-primary:hover {
+.func-all-btn .btn-primary:hover {
     background: #301942;
 }
 
 .linha-func {
+    right: 0;
     position: relative;
     margin: 0;
     padding: 0;
     width: 100%;
 }
-.linha-func .image {
-    display: inline-block;
-    box-shadow: 1px 1px 3px black;
-    margin: 10pt auto;
+.linha-func .container {
+    position: relative;
+    margin: auto;
+    padding: 10pt;
 }
-.linha-func a {
-    width: 90%;
-    height: 91%;
-    margin:0;
-    /* padding:10pt; */
-    background-color: #684087;
+  
+.linha-func .image {
+    display: block;
+}
+  
+.linha-func .overlay {
+    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    margin: 13pt;
     opacity: 0;
     transition: .5s ease;
     background-color: #684087;
 }
-.linha-func a:hover  {
+  
+.linha-func .container:hover .overlay {
     opacity: .9;
 }
+  
 .linha-func .text {
-    border-radius: 5px;
-    color: white; 
+    color: white;
     font-size: 20px;
     position: absolute;
     top: 50%;

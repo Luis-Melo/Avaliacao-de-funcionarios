@@ -112,6 +112,59 @@ body{
     text-align: center;
 }
 
+
+
+
+.cartao-funcionario{
+    margin: auto;
+    padding: 0;
+    color: white;
+    font-size: 14pt;
+}
+.cartao-funcionario img{
+    margin: 30pt auto;
+}
+.cartao-funcionario .jumbotron{
+    margin: 30pt auto;
+    padding: 30pt 0;
+    color: #684087;
+    background: rgba(255, 255, 255, 0.6);
+}
+.cartao-funcionario .jumbotron ul li {
+    list-style: none;
+}
+.cartao-funcionario table {
+    font-size: 12pt;
+    text-align: center;
+    height: auto;
+    margin: 30pt auto;
+    vertical-align: middle;
+}
+.cartao-funcionario table#table-geral{
+    height: 76%;
+}
+.cartao-funcionario table thead.thead-dark th {
+    border: none;
+    background: #301942;
+}
+.cartao-funcionario table thead.thead-dark th#table-des  {
+    background: #911616;
+}
+.cartao-funcionario table thead.thead-dark th#table-comp  {
+    background: #1f3a7f;
+}
+.cartao-funcionario table thead.thead-dark th#table-hab  {
+    background: #fcbd02;
+}
+.cartao-funcionario table thead.thead-dark th#table-adap  {
+    background: #337c21;
+}
+.cartao-funcionario table tbody{
+    background: white;
+}
+
+
+
 /*MENU DE AVALIAÇÕES*/
 section.aval-opt {
     margin: 15% auto;

@@ -38,11 +38,15 @@ body{
     text-transform: uppercase;
     /* text-shadow: 1px 1px 1px black;  */
 }
-.login input, a {
+.login input {
     margin: 0 auto 5%;
 }
+.login .login-btn{
+    padding: 0;
+    margin: 20pt auto auto;
+}
 .login a.btn-primary{
-    margin: auto;
+    width: 100%;
     background:  #684087;
     border:  #684087;
 }
@@ -100,10 +104,10 @@ body{
     margin: 13pt;
     opacity: 0;
     transition: .5s ease;
-    background-color: #684087;
 }
   
-.linha-func .container:hover .overlay {
+.linha-func .container a:hover .overlay {
+    background: #301942;
     opacity: .9;
 }
   
@@ -151,7 +155,7 @@ body{
     font-size: 14pt;
 }
 .cartao-funcionario .table td a{
-    color: #505050;
+    color: grey;
     transition: .2s ease-in-out;
     text-decoration: none;
 }
@@ -163,7 +167,7 @@ body{
 }
 .cartao-funcionario table thead.thead-dark th {
     border: none;
-    background: #301942;
+    background: #684087;
 }
 .cartao-funcionario table thead.thead-dark th#table-des  {
     background: #911616;

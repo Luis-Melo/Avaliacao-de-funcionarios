@@ -7,7 +7,98 @@
     <link rel="icon" href="img/purpleStar.png">
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <title>Avaliação de Funcionários | Funcionário 01</title>
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
+        .stars{
+            text-align: left;
+            margin: 30pt auto auto;
+            display: inline-block;
+        }
+        input.star{
+            display: none;
+        }
+        label.star {
+            float: right;
+            padding: 10px;
+            font-size: 36px;
+            color: #444;
+            transition: all .2s;
+        }
+        input.star:checked ~ label.star:before {
+            content:'\f005';
+            color: #FD4;
+            transition: all .25s;
+        }
+        input.star-5:checked ~ label.star:before {
+            color:#FE7;
+            text-shadow: 0 0 20px #952;
+        }
+        input.star-1:checked ~ label.star:before {
+            color: #F62;
+        }
+        label.star:hover{
+            transform: rotate(-15deg) scale(1.3);
+        }
+        label.star:before{
+            content:'\f006';
+            font-family: FontAwesome;
+        }
+        .rev-box{
+            overflow: hidden;
+            height: 0;
+            width: 100%;
+            transition: all .25s;
+        }
+        textarea.review{
+            background: #222;
+            border: none;
+            width: 100%;
+            max-width: 100%;
+            height: 100px;
+            padding: 10px;
+            box-sizing: border-box;
+            color: #EEE;
+        }
+        label.review{
+            display: block;
+            transition:opacity .25s;
+        }
+            
+        input.star:checked ~ .rev-box{
+            height: 125px;
+            overflow: visible;
+        }
+        .modal{
+            width:100%;
+            margin: auto;
+        }
+        .modal-header{
+            color: white;
+            background: #684087;
+        }
+        .modal-header#modal-header-des{
+            background:#911616;
+        }
+        .modal-header#modal-header-des{
+            background:#fcbd02;
+        }
+        .modal-header#aval-suc{
+            background: white;
+            color: #303030;
+        }
+        .modal .btn-primary{
+            background: #684087;
+            border:#684087;
+            font-size: 15pt;
+        }
+        .modal#avalSucesso .btn-primary{
+            padding-left: 25pt;
+            padding-right: 25pt;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -33,7 +124,7 @@
                         <tr><th>GERAL</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td><a href="">Avaliar</a></td></tr>
+                        <tr><td><a href="" data-toggle="modal" data-target="#modalAvalGeral">Avaliar</a></td></tr>
                         <tr><td><a href="">Gerar Relatório</a></td></tr>
                     </tbody>
                 </table>
@@ -82,8 +173,285 @@
                     </tbody>
                 </table>
             </div>  
-        </div>          
+        </div>
+        
+        
+        <div class="modal fade" id="modalAvalGeral" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Avaliação Geral</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Qualidade das Entregas</h5>
+                        <form action="" clas>
+                            <input class="star star-5" id="star-5" type="radio" name="star"/>
+                            <label class="star star-5" for="star-5"></label>
+                            <input class="star star-4" id="star-4" type="radio" name="star"/>
+                            <label class="star star-4" for="star-4"></label>
+                            <input class="star star-3" id="star-3" type="radio" name="star"/>
+                            <label class="star star-3" for="star-3"></label>
+                            <input class="star star-2" id="star-2" type="radio" name="star"/>
+                            <label class="star star-2" for="star-2"></label>
+                            <input class="star star-1" id="star-1" type="radio" name="star"/>
+                            <label class="star star-1" for="star-1"></label>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Pontualidade das Entregas</h5>
+                        <form action="">
+                            <input class="star star-5" id="star-10" type="radio" name="star"/>
+                            <label class="star star-5" for="star-10"></label>
+                            <input class="star star-4" id="star-9" type="radio" name="star"/>
+                            <label class="star star-4" for="star-9"></label>
+                            <input class="star star-3" id="star-8" type="radio" name="star"/>
+                            <label class="star star-3" for="star-8"></label>
+                            <input class="star star-2" id="star-7" type="radio" name="star"/>
+                            <label class="star star-2" for="star-7"></label>
+                            <input class="star star-1" id="star-6" type="radio" name="star"/>
+                            <label class="star star-1" for="star-6"></label>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Custo das Entregas</h5>
+                        <form action="">
+                            <input class="star star-5" id="star-15" type="radio" name="star"/>
+                            <label class="star star-5" for="star-15"></label>
+                            <input class="star star-4" id="star-14" type="radio" name="star"/>
+                            <label class="star star-4" for="star-14"></label>
+                            <input class="star star-3" id="star-13" type="radio" name="star"/>
+                            <label class="star star-3" for="star-13"></label>
+                            <input class="star star-2" id="star-12" type="radio" name="star"/>
+                            <label class="star star-2" for="star-12"></label>
+                            <input class="star star-1" id="star-11" type="radio" name="star"/>
+                            <label class="star star-1" for="star-11"></label>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Aprendizado</h5>
+                        <form action="">
+                            <input class="star star-5" id="star-20" type="radio" name="star"/>
+                            <label class="star star-5" for="star-20"></label>
+                            <input class="star star-4" id="star-19" type="radio" name="star"/>
+                            <label class="star star-4" for="star-19"></label>
+                            <input class="star star-3" id="star-18" type="radio" name="star"/>
+                            <label class="star star-3" for="star-18"></label>
+                            <input class="star star-2" id="star-17" type="radio" name="star"/>
+                            <label class="star star-2" for="star-17"></label>
+                            <input class="star star-1" id="star-16" type="radio" name="star"/>
+                            <label class="star star-1" for="star-16"></label>
+                        </form>
+                    </div>
+
+                    <div class="stars col-lg-12">
+                        <h5>Pontualidade</h5>
+                        <form action="">
+                            <input class="star star-5" id="star-25" type="radio" name="star"/>
+                            <label class="star star-5" for="star-25"></label>
+                            <input class="star star-4" id="star-24" type="radio" name="star"/>
+                            <label class="star star-4" for="star-24"></label>
+                            <input class="star star-3" id="star-23" type="radio" name="star"/>
+                            <label class="star star-3" for="star-23"></label>
+                            <input class="star star-2" id="star-22" type="radio" name="star"/>
+                            <label class="star star-2" for="star-22"></label>
+                            <input class="star star-1" id="star-21" type="radio" name="star"/>
+                            <label class="star star-1" for="star-21"></label>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Assiduidade</h5>
+                        <form action="">
+                            <input class="star star-5" id="star-30" type="radio" name="star"/>
+                            <label class="star star-5" for="star-30"></label>
+                            <input class="star star-4" id="star-29" type="radio" name="star"/>
+                            <label class="star star-4" for="star-29"></label>
+                            <input class="star star-3" id="star-28" type="radio" name="star"/>
+                            <label class="star star-3" for="star-28"></label>
+                            <input class="star star-2" id="star-27" type="radio" name="star"/>
+                            <label class="star star-2" for="star-27"></label>
+                            <input class="star star-1" id="star-26" type="radio" name="star"/>
+                            <label class="star star-1" for="star-26"></label>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Comunicação</h5>
+                        <form action="">
+                            <input class="star star-5" id="star-35" type="radio" name="star"/>
+                            <label class="star star-5" for="star-35"></label>
+                            <input class="star star-4" id="star-34" type="radio" name="star"/>
+                            <label class="star star-4" for="star-34"></label>
+                            <input class="star star-3" id="star-33" type="radio" name="star"/>
+                            <label class="star star-3" for="star-33"></label>
+                            <input class="star star-2" id="star-32" type="radio" name="star"/>
+                            <label class="star star-2" for="star-32"></label>
+                            <input class="star star-1" id="star-31" type="radio" name="star"/>
+                            <label class="star star-1" for="star-31"></label>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Relacionamento com a Equipe</h5>
+                        <form action="">
+                            <input class="star star-5" id="star-40" type="radio" name="star"/>
+                            <label class="star star-5" for="star-40"></label>
+                            <input class="star star-4" id="star-39" type="radio" name="star"/>
+                            <label class="star star-4" for="star-39"></label>
+                            <input class="star star-3" id="star-38" type="radio" name="star"/>
+                            <label class="star star-3" for="star-38"></label>
+                            <input class="star star-2" id="star-37" type="radio" name="star"/>
+                            <label class="star star-2" for="star-37"></label>
+                            <input class="star star-1" id="star-36" type="radio" name="star"/>
+                            <label class="star star-1" for="star-36"></label>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Postura diante de Desafios</h5>
+                        <form action="">
+                            <input class="star star-5" id="star-45" type="radio" name="star"/>
+                            <label class="star star-5" for="star-45"></label>
+                            <input class="star star-4" id="star-44" type="radio" name="star"/>
+                            <label class="star star-4" for="star-44"></label>
+                            <input class="star star-3" id="star-43" type="radio" name="star"/>
+                            <label class="star star-3" for="star-43"></label>
+                            <input class="star star-2" id="star-42" type="radio" name="star"/>
+                            <label class="star star-2" for="star-42"></label>
+                            <input class="star star-1" id="star-41" type="radio" name="star"/>
+                            <label class="star star-1" for="star-41"></label>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                            <h5>Resolução de Problemas</h5>
+                            <form action="">
+                                <input class="star star-5" id="star-50" type="radio" name="star"/>
+                                <label class="star star-5" for="star-50"></label>
+                                <input class="star star-4" id="star-49" type="radio" name="star"/>
+                                <label class="star star-4" for="star-49"></label>
+                                <input class="star star-3" id="star-48" type="radio" name="star"/>
+                                <label class="star star-3" for="star-48"></label>
+                                <input class="star star-2" id="star-47" type="radio" name="star"/>
+                                <label class="star star-2" for="star-47"></label>
+                                <input class="star star-1" id="star-46" type="radio" name="star"/>
+                                <label class="star star-1" for="star-46"></label>
+                            </form>
+                        </div>
+                        <div class="stars col-lg-12">
+                            <h5>Produtividade</h5>
+                            <form action="">
+                                <input class="star star-5" id="star-55" type="radio" name="star"/>
+                                <label class="star star-5" for="star-55"></label>
+                                <input class="star star-4" id="star-54" type="radio" name="star"/>
+                                <label class="star star-4" for="star-54"></label>
+                                <input class="star star-3" id="star-53" type="radio" name="star"/>
+                                <label class="star star-3" for="star-53"></label>
+                                <input class="star star-2" id="star-52" type="radio" name="star"/>
+                                <label class="star star-2" for="star-52"></label>
+                                <input class="star star-1" id="star-51" type="radio" name="star"/>
+                                <label class="star star-1" for="star-51"></label>
+                            </form>
+                        </div>
+                        <div class="stars col-lg-12">
+                            <h5>Colaboração</h5>
+                            <form action="">
+                                <input class="star star-5" id="star-60" type="radio" name="star"/>
+                                <label class="star star-5" for="star-60"></label>
+                                <input class="star star-4" id="star-59" type="radio" name="star"/>
+                                <label class="star star-4" for="star-59"></label>
+                                <input class="star star-3" id="star-58" type="radio" name="star"/>
+                                <label class="star star-3" for="star-58"></label>
+                                <input class="star star-2" id="star-57" type="radio" name="star"/>
+                                <label class="star star-2" for="star-57"></label>
+                                <input class="star star-1" id="star-56" type="radio" name="star"/>
+                                <label class="star star-1" for="star-56"></label>
+                            </form>
+                        </div>
+                        <div class="stars col-lg-12">
+                            <h5>Normas da Empresa</h5>
+                            <form action="">
+                                <input class="star star-5" id="star-65" type="radio" name="star"/>
+                                <label class="star star-5" for="star-65"></label>
+                                <input class="star star-4" id="star-64" type="radio" name="star"/>
+                                <label class="star star-4" for="star-64"></label>
+                                <input class="star star-3" id="star-63" type="radio" name="star"/>
+                                <label class="star star-3" for="star-63"></label>
+                                <input class="star star-2" id="star-62" type="radio" name="star"/>
+                                <label class="star star-2" for="star-62"></label>
+                                <input class="star star-1" id="star-61" type="radio" name="star"/>
+                                <label class="star star-1" for="star-61"></label>
+                            </form>
+                        </div>
+                        <div class="stars col-lg-12">
+                            <h5>Eventos Externos</h5>
+                            <form action="">
+                                <input class="star star-5" id="star-70" type="radio" name="star"/>
+                                <label class="star star-5" for="star-70"></label>
+                                <input class="star star-4" id="star-69" type="radio" name="star"/>
+                                <label class="star star-4" for="star-69"></label>
+                                <input class="star star-3" id="star-68" type="radio" name="star"/>
+                                <label class="star star-3" for="star-68"></label>
+                                <input class="star star-2" id="star-67" type="radio" name="star"/>
+                                <label class="star star-2" for="star-67"></label>
+                                <input class="star star-1" id="star-66" type="radio" name="star"/>
+                                <label class="star star-1" for="star-66"></label>
+                            </form>
+                        </div>
+                        <div class="stars col-lg-12">
+                            <h5>Tecnologias</h5>
+                            <form action="">
+                                <input class="star star-5" id="star-75" type="radio" name="star"/>
+                                <label class="star star-5" for="star-75"></label>
+                                <input class="star star-4" id="star-74" type="radio" name="star"/>
+                                <label class="star star-4" for="star-74"></label>
+                                <input class="star star-3" id="star-73" type="radio" name="star"/>
+                                <label class="star star-3" for="star-73"></label>
+                                <input class="star star-2" id="star-72" type="radio" name="star"/>
+                                <label class="star star-2" for="star-72"></label>
+                                <input class="star star-1" id="star-71" type="radio" name="star"/>
+                                <label class="star star-1" for="star-71"></label>
+                            </form>
+                        </div>
+                        <div class="stars col-lg-12">
+                            <h5>Valores da Empresa</h5>
+                            <form action="">
+                                <input class="star star-5" id="star-80" type="radio" name="star"/>
+                                <label class="star star-5" for="star-80"></label>
+                                <input class="star star-4" id="star-79" type="radio" name="star"/>
+                                <label class="star star-4" for="star-79"></label>
+                                <input class="star star-3" id="star-78" type="radio" name="star"/>
+                                <label class="star star-3" for="star-78"></label>
+                                <input class="star star-2" id="star-77" type="radio" name="star"/>
+                                <label class="star star-2" for="star-77"></label>
+                                <input class="star star-1" id="star-76" type="radio" name="star"/>
+                                <label class="star star-1" for="star-76"></label>
+                            </form>
+                        </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#avalSucesso">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="avalSucesso" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+            <div class="modal-dialog row" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center" id="aval-suc">
+                        <h4 class="modal-title w-100 font-weight-bold">Avaliação Enviada com Sucesso!</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-primary" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 
 
     <footer>

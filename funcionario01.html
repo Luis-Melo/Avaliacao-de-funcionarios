@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link href="/fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="starability-all.min.css">
+    <link rel="stylesheet" type="text/css" href="starability-master/starability-minified/starability-all.min.css"/>
     <title>Avaliação de Funcionários | Funcionário 01</title>
 
     <style>
@@ -495,7 +497,7 @@
                     </div>
                     <div class="stars col-lg-12">
                         <h5>Qualidade das Entregas</h5>
-                        <form action="">
+                        <!-- <form action="">
                             <input class="star star-5" id="star-85" type="radio" name="star"/>
                             <label class="star star-5" for="star-85"></label>
                             <input class="star star-4" id="star-84" type="radio" name="star"/>
@@ -506,6 +508,24 @@
                             <label class="star star-2" for="star-82"></label>
                             <input class="star star-1" id="star-81" type="radio" name="star"/>
                             <label class="star star-1" for="star-81"></label>
+                        </form> -->
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5" name="rating" value="5" />
+                                <label for="rate5" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4" name="rating" value="4" />
+                                <label for="rate4" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3" name="rating" value="3" />
+                                <label for="rate3" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2" name="rating" value="2" />
+                                <label for="rate2" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1" name="rating" value="1" />
+                                <label for="rate1" title="Terrible">1 star</label>
+                            </fieldset>
                         </form>
                     </div>
                     <div class="stars col-lg-12">

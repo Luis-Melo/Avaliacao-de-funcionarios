@@ -7,7 +7,59 @@
     <link rel="icon" href="img/purpleStar.png">
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="/fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="starability-all.min.css">
+    <link rel="stylesheet" type="text/css" href="starability-master/starability-minified/starability-all.min.css"/>
     <title>Avaliação de Funcionários | Funcionário 03</title>
+
+    <style>
+        .stars{
+            text-align: left;
+            margin: 30pt auto auto;
+            display: inline-block;
+        }
+        .modal{
+            width:100%;
+            margin: auto;
+        }
+        .modal-header{
+            color: white;
+            background: #684087;
+        }
+        .modal-header#modal-header-des{
+            background:#911616;
+        }
+        .modal-header#modal-header-comp{
+            background:#1f3a7f;
+        }
+        .modal-header#modal-header-hab{
+            background:#fcbd02;
+        }
+        .modal-header#modal-header-adap{
+            background:#337c21;
+        }
+        .modal-header#aval-suc{
+            background: white;
+            color: #303030;
+        }
+        .modal .btn-primary{
+            background: #684087;
+            border:#684087;
+            font-size: 15pt;
+        }
+        .modal#avalSucesso .btn-primary{
+            padding-left: 25pt;
+            padding-right: 25pt;
+        }
+        .modal img{
+            width: 100%;
+        }
+        .modal .comments{
+            width:90%;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -20,11 +72,11 @@
             </div>
             <div class="jumbotron col-lg-6 col-md-7 col-sm-11 col-11">
                 <ul>
-                    <li><strong>NOME:</strong> Fulano Sicrano Beltrano</li>
-                    <li><strong>CARGO:</strong> cargo01</li>
-                    <li><strong>SALÁRIO:</strong> R$ xx xxx, xx</li>
-                    <li><strong>DEPARTAMENTO:</strong> departamento01</li>
-                    <li><strong>DATA DA CONTRATAÇÃO:</strong> dd/mm/aaa </li>
+                    <li><strong>NOME:</strong> Juliana Cavalcanti de Souza</li>
+                    <li><strong>CARGO:</strong> Analista de Marketing</li>
+                    <li><strong>SALÁRIO:</strong> R$ 4.000,00</li>
+                    <li><strong>DEPARTAMENTO:</strong> Departamento comercial</li>
+                    <li><strong>DATA DA CONTRATAÇÃO:</strong> 13/04/2017</li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-12 col-sm-12 col-12">
@@ -33,8 +85,8 @@
                         <tr><th>GERAL</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td><a href="">Avaliar</a></td></tr>
-                        <tr><td><a href="">Gerar Relatório</a></td></tr>
+                        <tr><td><a href="" data-toggle="modal" data-target="#modalAvalGeral">Avaliar</a></td></tr>
+                        <tr><td><a href="" data-toggle="modal" data-target="#modalRelGeral">Gerar Relatório</a></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -44,8 +96,8 @@
                         <tr><th id="table-des">DESEMPENHO</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td><a href="">Avaliar</a></td></tr>
-                        <tr><td><a href="">Gerar Relatório</a></td></tr>
+                        <tr><td><a href="" data-toggle="modal" data-target="#modalAvalDes">Avaliar</a></td></tr>
+                        <tr><td><a href="" data-toggle="modal" data-target="#modalRelDes">Gerar Relatório</a></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -55,8 +107,8 @@
                         <tr><th id="table-comp">COMPORTAMENTO</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td><a href="">Avaliar</a></td></tr>
-                        <tr><td><a href="">Gerar Relatório</a></td></tr>
+                        <tr><td><a href="" data-toggle="modal" data-target="#modalAvalComp">Avaliar</a></td></tr>
+                        <tr><td><a href="" data-toggle="modal" data-target="#modalRelComp">Gerar Relatório</a></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -66,8 +118,8 @@
                         <tr><th id="table-hab">HABILIDADES</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td><a href="">Avaliar</a></td></tr>
-                        <tr><td><a href="">Gerar Relatório</a></td></tr>
+                        <tr><td><a href="" data-toggle="modal" data-target="#modalAvalHab">Avaliar</a></td></tr>
+                        <tr><td><a href="" data-toggle="modal" data-target="#modalRelHab">Gerar Relatório</a></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -77,13 +129,980 @@
                         <tr><th id="table-adap">ADAPTAÇÃO</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td><a href="">Avaliar</a></td></tr>
-                        <tr><td><a href="">Gerar Relatório</a></td></tr>
+                        <tr><td><a href="" data-toggle="modal" data-target="#modalAvalAdap">Avaliar</a></td></tr>
+                        <tr><td><a href="" data-toggle="modal" data-target="#modalRelAdap">Gerar Relatório</a></td></tr>
                     </tbody>
                 </table>
             </div>  
-        </div>          
+        </div>
+        
+        
+        <div class="modal fade" id="modalAvalGeral" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Avaliação Geral</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Qualidade das Entregas</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-geral-des-01" name="rating" value="5" />
+                                <label for="rate5-geral-des-01" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-geral-des-01" name="rating" value="4" />
+                                <label for="rate4-geral-des-01" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-geral-des-01" name="rating" value="3" />
+                                <label for="rate3-geral-des-01" title="Average-01">3 stars</label>
+                            
+                                <input type="radio" id="rate2-geral-des-01" name="rating" value="2" />
+                                <label for="rate2-geral-des-01" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-des-geral-01" name="rating" value="1" />
+                                <label for="rate1-des-geral-01" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Pontualidade das Entregas</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-geral-des-02" name="rating" value="5" />
+                                <label for="rate5-geral-des-02" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-geral-des-02" name="rating" value="4" />
+                                <label for="rate4-geral-des-02" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-geral-des-02" name="rating" value="3" />
+                                <label for="rate3-geral-des-02" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-geral-des-02" name="rating" value="2" />
+                                <label for="rate2-geral-des-02" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-geral-des-02" name="rating" value="1" />
+                                <label for="rate1-geral-des-02" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Custo das Entregas</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-geral-des-03" name="rating" value="5" />
+                                <label for="rate5-geral-des-03" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-geral-des-03" name="rating" value="4" />
+                                <label for="rate4-geral-des-03" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-geral-des-03" name="rating" value="3" />
+                                <label for="rate3-geral-des-03" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-geral-des-03" name="rating" value="2" />
+                                <label for="rate2-geral-des-03" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-geral-des-03" name="rating" value="1" />
+                                <label for="rate1-geral-des-03" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Aprendizado</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-geral-des-04" name="rating" value="5" />
+                                <label for="rate5-geral-des-04" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-geral-des-04" name="rating" value="4" />
+                                <label for="rate4-geral-des-04" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-geral-des-04" name="rating" value="3" />
+                                <label for="rate3-geral-des-04" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-geral-des-04" name="rating" value="2" />
+                                <label for="rate2-geral-des-04" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-geral-des-04" name="rating" value="1" />
+                                <label for="rate1-geral-des-04" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Comentários - Desempenho</h5>
+                        <div class="md-form">
+                            <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Pontualidade</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-geral-comp-01" name="rating" value="5" />
+                                <label for="rate5-geral-comp-01" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-geral-comp-01" name="rating" value="4" />
+                                <label for="rate4-geral-comp-01" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-geral-comp-01" name="rating" value="3" />
+                                <label for="rate3-geral-comp-01" title="Average-01">3 stars</label>
+                            
+                                <input type="radio" id="rate2-geral-comp-01" name="rating" value="2" />
+                                <label for="rate2-geral-comp-01" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-geral-comp-01" name="rating" value="1" />
+                                <label for="rate1-geral-comp-01" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Assiduidade</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-geral-comp-02" name="rating" value="5" />
+                                <label for="rate5-geral-comp-02" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-geral-comp-02" name="rating" value="4" />
+                                <label for="rate4-geral-comp-02" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-geral-comp-02" name="rating" value="3" />
+                                <label for="rate3-geral-comp-02" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-geral-comp-02" name="rating" value="2" />
+                                <label for="rate2-geral-comp-02" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-geral-comp-02" name="rating" value="1" />
+                                <label for="rate1-geral-comp-02" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Comunicação</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-geral-comp-03" name="rating" value="5" />
+                                <label for="rate5-geral-comp-03" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-geral-comp-03" name="rating" value="4" />
+                                <label for="rate4-geral-comp-03" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-geral-comp-03" name="rating" value="3" />
+                                <label for="rate3-geral-comp-03" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-geral-comp-03" name="rating" value="2" />
+                                <label for="rate2-geral-comp-03" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-geral-comp-03" name="rating" value="1" />
+                                <label for="rate1-geral-comp-03" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Relacionamento com a Equipe</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-geral-comp-04" name="rating" value="5" />
+                                <label for="rate5-geral-comp-04" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-geral-comp-04" name="rating" value="4" />
+                                <label for="rate4-geral-comp-04" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-geral-comp-04" name="rating" value="3" />
+                                <label for="rate3-geral-comp-04" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-geral-comp-04" name="rating" value="2" />
+                                <label for="rate2-geral-comp-04" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-geral-comp-04" name="rating" value="1" />
+                                <label for="rate1-geral-comp-04" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Postura diante de Desafios</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-geral-comp-05" name="rating" value="5" />
+                                <label for="rate5-geral-comp-05" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-geral-comp-05" name="rating" value="4" />
+                                <label for="rate4-geral-comp-05" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-geral-comp-05" name="rating" value="3" />
+                                <label for="rate3-geral-comp-05" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-geral-comp-05" name="rating" value="2" />
+                                <label for="rate2-geral-comp-05" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-geral-comp-05" name="rating" value="1" />
+                                <label for="rate1-geral-comp-05" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Comentários - Comportamento</h5>
+                        <div class="md-form">
+                            <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Resolução de Problemas</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-geral-hab-01" name="rating" value="5" />
+                                <label for="rate5-geral-hab-01" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-geral-hab-01" name="rating" value="4" />
+                                <label for="rate4-geral-hab-01" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-geral-hab-01" name="rating" value="3" />
+                                <label for="rate3-geral-hab-01" title="Average-01">3 stars</label>
+                            
+                                <input type="radio" id="rate2-geral-hab-01" name="rating" value="2" />
+                                <label for="rate2-geral-hab-01" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-geral-hab-01" name="rating" value="1" />
+                                <label for="rate1-geral-hab-01" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Produtividade</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-geral-hab-02" name="rating" value="5" />
+                                <label for="rate5-geral-hab-02" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-geral-hab-02" name="rating" value="4" />
+                                <label for="rate4-geral-hab-02" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-geral-hab-02" name="rating" value="3" />
+                                <label for="rate3-geral-hab-02" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-geral-hab-02" name="rating" value="2" />
+                                <label for="rate2-geral-hab-02" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-geral-hab-02" name="rating" value="1" />
+                                <label for="rate1-geral-hab-02" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Colaboração</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-geral-hab-03" name="rating" value="5" />
+                                <label for="rate5-geral-hab-03" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-geral-hab-03" name="rating" value="4" />
+                                <label for="rate4-geral-hab-03" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-geral-hab-03" name="rating" value="3" />
+                                <label for="rate3-geral-hab-03" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-geral-hab-03" name="rating" value="2" />
+                                <label for="rate2-geral-hab-03" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-geral-hab-03" name="rating" value="1" />
+                                <label for="rate1-geral-hab-03" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Comentários - Habilidades</h5>
+                        <div class="md-form">
+                            <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Normas da Empresa</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-geral-adap-01" name="rating" value="5" />
+                                <label for="rate5-geral-adap-01" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-geral-adap-01" name="rating" value="4" />
+                                <label for="rate4-geral-adap-01" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-geral-adap-01" name="rating" value="3" />
+                                <label for="rate3-geral-adap-01" title="Average-01">3 stars</label>
+                            
+                                <input type="radio" id="rate2-geral-adap-01" name="rating" value="2" />
+                                <label for="rate2-geral-adap-01" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-geral-adap-01" name="rating" value="1" />
+                                <label for="rate1-geral-adap-01" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Eventos Externos</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-geral-adap-02" name="rating" value="5" />
+                                <label for="rate5-geral-adap-02" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-geral-adap-02" name="rating" value="4" />
+                                <label for="rate4-geral-adap-02" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-geral-adap-02" name="rating" value="3" />
+                                <label for="rate3-geral-adap-02" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-geral-adap-02" name="rating" value="2" />
+                                <label for="rate2-geral-adap-02" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-geral-adap-02" name="rating" value="1" />
+                                <label for="rate1-geral-adap-02" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Tecnologias</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-geral-adap-03" name="rating" value="5" />
+                                <label for="rate5-geral-adap-03" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-geral-adap-03" name="rating" value="4" />
+                                <label for="rate4-geral-adap-03" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-geral-adap-03" name="rating" value="3" />
+                                <label for="rate3-geral-adap-03" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-geral-adap-03" name="rating" value="2" />
+                                <label for="rate2-geral-adap-03" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-geral-adap-03" name="rating" value="1" />
+                                <label for="rate1-geral-adap-03" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Valores da Empresa</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-geral-adap-04" name="rating" value="5" />
+                                <label for="rate5-geral-adap-04" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-geral-adap-04" name="rating" value="4" />
+                                <label for="rate4-geral-adap-04" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-geral-adap-04" name="rating" value="3" />
+                                <label for="rate3-geral-adap-04" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-geral-adap-04" name="rating" value="2" />
+                                <label for="rate2-geral-adap-04" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-geral-adap-04" name="rating" value="1" />
+                                <label for="rate1-geral-adap-04" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Comentários - Adaptação</h5>
+                        <div class="md-form">
+                            <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#avalSucesso">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalAvalDes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center" id="modal-header-des">
+                        <h4 class="modal-title w-100 font-weight-bold">Avaliação de Desempenho</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Qualidade das Entregas</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-des-01" name="rating" value="5" />
+                                <label for="rate5-des-01" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-des-01" name="rating" value="4" />
+                                <label for="rate4-des-01" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-des-01" name="rating" value="3" />
+                                <label for="rate3-des-01" title="Average-01">3 stars</label>
+                            
+                                <input type="radio" id="rate2-des-01" name="rating" value="2" />
+                                <label for="rate2-des-01" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-des-01" name="rating" value="1" />
+                                <label for="rate1-des-01" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Pontualidade das Entregas</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-des-02" name="rating" value="5" />
+                                <label for="rate5-des-02" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-des-02" name="rating" value="4" />
+                                <label for="rate4-des-02" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-des-02" name="rating" value="3" />
+                                <label for="rate3-des-02" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-des-02" name="rating" value="2" />
+                                <label for="rate2-des-02" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-des-02" name="rating" value="1" />
+                                <label for="rate1-des-02" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Custo das Entregas</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-des-03" name="rating" value="5" />
+                                <label for="rate5-des-03" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-des-03" name="rating" value="4" />
+                                <label for="rate4-des-03" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-des-03" name="rating" value="3" />
+                                <label for="rate3-des-03" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-des-03" name="rating" value="2" />
+                                <label for="rate2-des-03" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-des-03" name="rating" value="1" />
+                                <label for="rate1-des-03" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Aprendizado</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-des-04" name="rating" value="5" />
+                                <label for="rate5-des-04" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-des-04" name="rating" value="4" />
+                                <label for="rate4-des-04" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-des-04" name="rating" value="3" />
+                                <label for="rate3-des-04" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-des-04" name="rating" value="2" />
+                                <label for="rate2-des-04" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-des-04" name="rating" value="1" />
+                                <label for="rate1-des-04" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Comentários</h5>
+                        <div class="md-form">
+                            <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#avalSucesso">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalAvalComp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center" id="modal-header-comp">
+                        <h4 class="modal-title w-100 font-weight-bold">Avaliação de Comportamento</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Pontualidade</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-comp-01" name="rating" value="5" />
+                                <label for="rate5-comp-01" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-comp-01" name="rating" value="4" />
+                                <label for="rate4-comp-01" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-comp-01" name="rating" value="3" />
+                                <label for="rate3-comp-01" title="Average-01">3 stars</label>
+                            
+                                <input type="radio" id="rate2-comp-01" name="rating" value="2" />
+                                <label for="rate2-comp-01" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-comp-01" name="rating" value="1" />
+                                <label for="rate1-comp-01" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Assiduidade</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-comp-02" name="rating" value="5" />
+                                <label for="rate5-comp-02" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-comp-02" name="rating" value="4" />
+                                <label for="rate4-comp-02" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-comp-02" name="rating" value="3" />
+                                <label for="rate3-comp-02" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-comp-02" name="rating" value="2" />
+                                <label for="rate2-comp-02" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-comp-02" name="rating" value="1" />
+                                <label for="rate1-comp-02" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Comunicação</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-comp-03" name="rating" value="5" />
+                                <label for="rate5-comp-03" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-comp-03" name="rating" value="4" />
+                                <label for="rate4-comp-03" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-comp-03" name="rating" value="3" />
+                                <label for="rate3-comp-03" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-comp-03" name="rating" value="2" />
+                                <label for="rate2-comp-03" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-comp-03" name="rating" value="1" />
+                                <label for="rate1-comp-03" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Relacionamento com a Equipe</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-comp-04" name="rating" value="5" />
+                                <label for="rate5-comp-04" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-comp-04" name="rating" value="4" />
+                                <label for="rate4-comp-04" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-comp-04" name="rating" value="3" />
+                                <label for="rate3-comp-04" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-comp-04" name="rating" value="2" />
+                                <label for="rate2-comp-04" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-comp-04" name="rating" value="1" />
+                                <label for="rate1-comp-04" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Postura diante de Desafios</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-comp-05" name="rating" value="5" />
+                                <label for="rate5-comp-05" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-comp-05" name="rating" value="4" />
+                                <label for="rate4-comp-05" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-comp-05" name="rating" value="3" />
+                                <label for="rate3-comp-05" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-comp-05" name="rating" value="2" />
+                                <label for="rate2-comp-05" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-comp-05" name="rating" value="1" />
+                                <label for="rate1-comp-05" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Comentários</h5>
+                        <div class="md-form">
+                            <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#avalSucesso">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalAvalHab" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center" id="modal-header-hab">
+                        <h4 class="modal-title w-100 font-weight-bold">Avaliação de Habilidades</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Resolução de Problemas</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-hab-01" name="rating" value="5" />
+                                <label for="rate5-hab-01" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-hab-01" name="rating" value="4" />
+                                <label for="rate4-hab-01" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-hab-01" name="rating" value="3" />
+                                <label for="rate3-hab-01" title="Average-01">3 stars</label>
+                            
+                                <input type="radio" id="rate2-hab-01" name="rating" value="2" />
+                                <label for="rate2-hab-01" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-hab-01" name="rating" value="1" />
+                                <label for="rate1-hab-01" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Produtividade</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-hab-02" name="rating" value="5" />
+                                <label for="rate5-hab-02" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-hab-02" name="rating" value="4" />
+                                <label for="rate4-hab-02" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-hab-02" name="rating" value="3" />
+                                <label for="rate3-hab-02" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-hab-02" name="rating" value="2" />
+                                <label for="rate2-hab-02" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-hab-02" name="rating" value="1" />
+                                <label for="rate1-hab-02" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Colaboração</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-hab-03" name="rating" value="5" />
+                                <label for="rate5-hab-03" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-hab-03" name="rating" value="4" />
+                                <label for="rate4-hab-03" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-hab-03" name="rating" value="3" />
+                                <label for="rate3-hab-03" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-hab-03" name="rating" value="2" />
+                                <label for="rate2-hab-03" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-hab-03" name="rating" value="1" />
+                                <label for="rate1-hab-03" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Comentários</h5>
+                        <div class="md-form">
+                            <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#avalSucesso">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalAvalAdap" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center" id="modal-header-adap">
+                        <h4 class="modal-title w-100 font-weight-bold">Avaliação de Adaptação</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Normas da Empresa</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-adap-01" name="rating" value="5" />
+                                <label for="rate5-adap-01" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-adap-01" name="rating" value="4" />
+                                <label for="rate4-adap-01" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-adap-01" name="rating" value="3" />
+                                <label for="rate3-adap-01" title="Average-01">3 stars</label>
+                            
+                                <input type="radio" id="rate2-adap-01" name="rating" value="2" />
+                                <label for="rate2-adap-01" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-adap-01" name="rating" value="1" />
+                                <label for="rate1-adap-01" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Eventos Externos</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-adap-02" name="rating" value="5" />
+                                <label for="rate5-adap-02" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-adap-02" name="rating" value="4" />
+                                <label for="rate4-adap-02" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-adap-02" name="rating" value="3" />
+                                <label for="rate3-adap-02" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-adap-02" name="rating" value="2" />
+                                <label for="rate2-adap-02" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-adap-02" name="rating" value="1" />
+                                <label for="rate1-adap-02" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Tecnologias</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-adap-03" name="rating" value="5" />
+                                <label for="rate5-adap-03" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-adap-03" name="rating" value="4" />
+                                <label for="rate4-adap-03" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-adap-03" name="rating" value="3" />
+                                <label for="rate3-adap-03" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-adap-03" name="rating" value="2" />
+                                <label for="rate2-adap-03" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-adap-03" name="rating" value="1" />
+                                <label for="rate1-adap-03" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Valores da Empresa</h5>
+                        <form>
+                            <fieldset class="starability-checkmark">                             
+                                <input type="radio" id="rate5-adap-04" name="rating" value="5" />
+                                <label for="rate5-adap-04" title="Amazing">5 stars</label>
+                            
+                                <input type="radio" id="rate4-adap-04" name="rating" value="4" />
+                                <label for="rate4-adap-04" title="Very good">4 stars</label>
+                            
+                                <input type="radio" id="rate3-adap-04" name="rating" value="3" />
+                                <label for="rate3-adap-04" title="Average">3 stars</label>
+                            
+                                <input type="radio" id="rate2-adap-04" name="rating" value="2" />
+                                <label for="rate2-adap-04" title="Not good">2 stars</label>
+                            
+                                <input type="radio" id="rate1-adap-04" name="rating" value="1" />
+                                <label for="rate1-adap-04" title="Terrible">1 star</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="stars col-lg-12">
+                        <h5>Comentários</h5>
+                        <div class="md-form">
+                            <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#avalSucesso">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="avalSucesso" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+            <div class="modal-dialog row" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center" id="aval-suc">
+                        <h4 class="modal-title w-100 font-weight-bold">Avaliação Enviada com Sucesso!</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-primary" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalRelGeral" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+            <div class="modal-dialog row" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center" id="modal-header-geral">
+                        <h4 class="modal-title w-100 font-weight-bold">Relatório Geral</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <img src="img/desempenhoFunc03.png">
+                    <div class="comments">
+                        <p>Dentro do esperado.</p>
+                        <p>Dificilmente deixa de cumprir com os prazos.</p>
+                        <p>Bastante eficiente em seus projetos.</p>
+                        <p>Aprende tecnologias novas em tempo médio.</p>
+                    </div>
+                    <img src="img/comportamentoFunc03.png">
+                    <div class="comments">
+                        <p>Dificilmente chega atrasada e, quando chega, possui boas razões para tal.</p>
+                        <p>Nunca faltou.</p>
+                        <p>Se comunica de maneira clara e carismática, trazendo as pessoas para mais perto de si.</p>
+                        <p>É amigável com todos da equipe e não possui histórico de conflitos.</p>
+                        <p>Busca ajuda quando não é capaz de realizar suas tarefas sob os limites lhe postos, tais como prazo e tecnologia.</p>
+                    </div>
+                    <img src="img/habilidadesFunc03.png">
+                    <div class="comments">
+                        <p>Possui um conjunto sólido de estratégias para resolver problemas, mas possui pouca flexibilidade.</p>
+                        <p>Sempre cumpre suas tarefas sob o prazo pré estabelecido.</p>
+                        <p>Quando está presente em reuniões interdepartamentais, é capaz de tornar as discussões mais harmoniosas, impactando positivamente o fluxo das mesmas.</p>
+                    </div>
+                    <img src="img/adaptacaoFunc03.png">
+                    <div class="comments">
+                        <p>Nunca quebrou as regras da empresa.</p>
+                        <p>Se organiza muito bem para os eventos externos da empresa, sendo uma das peças-chave para a promoção da mesma.</p>
+                        <p>Conhece o básico necessário para realizar suas atividades.</p>
+                        <p>Promove positivamente a imagem da empresa.</p>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-primary" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalRelDes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+            <div class="modal-dialog row" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center" id="modal-header-des">
+                        <h4 class="modal-title w-100 font-weight-bold">Relatório de Desempenho</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <img src="img/desempenhoFunc03.png">
+                    <div class="comments">
+                        <p>Dentro do esperado.</p>
+                        <p>Dificilmente deixa de cumprir com os prazos.</p>
+                        <p>Bastante eficiente em seus projetos.</p>
+                        <p>Aprende tecnologias novas em tempo médio.</p>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-primary" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalRelComp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+            <div class="modal-dialog row" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center" id="modal-header-comp">
+                        <h4 class="modal-title w-100 font-weight-bold">Relatório de Comportamento</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <img src="img/comportamentoFunc03.png">
+                    <div class="comments">
+                        <p>Dificilmente chega atrasada e, quando chega, possui boas razões para tal.</p>
+                        <p>Nunca faltou.</p>
+                        <p>Se comunica de maneira clara e carismática, trazendo as pessoas para mais perto de si.</p>
+                        <p>É amigável com todos da equipe e não possui histórico de conflitos.</p>
+                        <p>Busca ajuda quando não é capaz de realizar suas tarefas sob os limites lhe postos, tais como prazo e tecnologia.</p>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-primary" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalRelHab" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+            <div class="modal-dialog row" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center" id="modal-header-hab">
+                        <h4 class="modal-title w-100 font-weight-bold">Relatório de Habilidades</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <img src="img/habilidadesFunc03.png">
+                    <div class="comments">
+                        <p>Possui um conjunto sólido de estratégias para resolver problemas, mas possui pouca flexibilidade.</p>
+                        <p>Sempre cumpre suas tarefas sob o prazo pré estabelecido.</p>
+                        <p>Quando está presente em reuniões interdepartamentais, é capaz de tornar as discussões mais harmoniosas, impactando positivamente o fluxo das mesmas.</p>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-primary" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalRelAdap" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+            <div class="modal-dialog row" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center" id="modal-header-adap">
+                        <h4 class="modal-title w-100 font-weight-bold">Relatório de Adaptação</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <img src="img/adaptacaoFunc03.png">
+                    <div class="comments">
+                        <p>Nunca quebrou as regras da empresa.</p>
+                        <p>Se organiza muito bem para os eventos externos da empresa, sendo uma das peças-chave para a promoção da mesma.</p>
+                        <p>Conhece o básico necessário para realizar suas atividades.</p>
+                        <p>Promove positivamente a imagem da empresa.</p>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-primary" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
 
 
     <footer>
